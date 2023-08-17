@@ -10,11 +10,6 @@ const NewBoxForm = ({addBox}) => {
         height: '',
          backgroundColor: ''
      }
-    // const [formData, setFormData] = useState({
-    //     width: '',
-    //     height: '',
-    //     backgroundColor: ''
-    // });
 
     const [formData, setFormData] = useState(INITIAL_STATE)
     
