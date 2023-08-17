@@ -1,22 +1,28 @@
 import { useState } from "react";
-import NewBoxForm from "./NewBoxForm";
 import Box from "./Box";
+import NewBoxForm from "./NewBoxForm";
+
 
 const BoxList = () => {
     //component should render all box components
-    const INITIAL_STATE = [
-        {width: 10, height: 10, backgroundColor: 'red'}
-    ]
-    const [boxes, setBox] = useState(INITIAL_STATE);
+    const [boxes, setBox] = useState([]);
+
     const addBox = newBox => {
         setBox(boxes => [...boxes, newBox]);
     }
 
+    const remove = id => {
+        setBox(boxes => boxes.filter(box => box.id !== id));
+    }
+
     const boxComponents = boxes.map(box => (
         <Box
+        key={box.id}
+        id={box.id}
         width={box.width}
         height={box.height}
         backgroundColor={box.backgroundColor}
+        removeBox={remove}
         />
     ))
 

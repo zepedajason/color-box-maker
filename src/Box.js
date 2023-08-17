@@ -1,19 +1,21 @@
-const Box = ({backgroundColor = "blue", width = 5, height = 5}) => {
-    // const boxStyle = {
-    //     backgroundColor: backgroundColor,
-    //     width: width,
-    //     height: height,
-    //     border: '1px solid black'
-    // }
+const Box = ({id, width, height, backgroundColor, removeBox}) => {
+     const boxStyle = {
+         width: `${width}px`,
+         height: `${height}px`,
+         backgroundColor: backgroundColor,
+         border: '1px solid black'
+     }
+
+     const remove = () => {
+        removeBox(id);
+     }
     
     return (
         <div>
-            <div style={{height: {height}, width: {width}, backgroundColor}}>
-
+            <div style={boxStyle}>
             </div>
+            <button onClick={remove}>X</button>
         </div>
-
-
     )
     
 }

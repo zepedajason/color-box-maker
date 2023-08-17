@@ -5,13 +5,19 @@ import { v4 as uuid} from 'uuid';
 // - When each ***Box*** component is displayed, add a button with the text of “X” next to each ***Box***. When this button is clicked, remove that specific box. This will require you to pass a function down as props - the button **should not** be a separate component, it should be included in the Box component.
 
 const NewBoxForm = ({addBox}) => {
-    const INITIAL_STATE = {
+     const INITIAL_STATE = {
         width: '',
         height: '',
-        backgroundColor: ''
-    }
-    const [formData, setFormData] = useState(INITIAL_STATE);
+         backgroundColor: ''
+     }
+    // const [formData, setFormData] = useState({
+    //     width: '',
+    //     height: '',
+    //     backgroundColor: ''
+    // });
 
+    const [formData, setFormData] = useState(INITIAL_STATE)
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData(formData => ({
